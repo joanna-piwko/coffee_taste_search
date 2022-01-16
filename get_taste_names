@@ -1,0 +1,202 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled10.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOcZlxZSGhvBgYXU5vcIkQo",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/joanna-piwko/coffee_taste_search/blob/main/get_taste_names\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import nltk\n",
+        "nltk.download('wordnet')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nN-3jbdW0Gh5",
+        "outputId": "e1efe790-5e6c-4cf5-c5ac-43f49b4ebbd0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[nltk_data] Downloading package wordnet to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping corpora/wordnet.zip.\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from nltk.corpus import wordnet as wn"
+      ],
+      "metadata": {
+        "id": "INHFQZOp0cZn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dog = wn.synset('fruit')\n",
+        "dog.hypernyms()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-JOOL0Iy0iOl",
+        "outputId": "fed20acb-7e24-42de-92dc-68815b93e1d8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[Synset('reproductive_structure.n.01')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = wn.synsets('strawberry')\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jP_qj1eu0mHu",
+        "outputId": "b56969ae-9501-4f6f-9198-3b8bf8b626bd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[Synset('strawberry.n.01'),\n",
+              " Synset('strawberry.n.02'),\n",
+              " Synset('strawberry.n.03')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "wn.synset('strawberry.n.03').lemmas()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XETKFTbI1nZh",
+        "outputId": "b758cd2b-5c8a-42f1-def0-feac41e03135"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[Lemma('strawberry.n.03.strawberry'),\n",
+              " Lemma('strawberry.n.03.strawberry_mark'),\n",
+              " Lemma('strawberry.n.03.hemangioma_simplex')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "wn.synsets('fruits')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "P5y-vaFH11IF",
+        "outputId": "2e03b1ab-45d8-4ecb-8f4c-62566b894c24"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[Synset('fruit.n.01'),\n",
+              " Synset('yield.n.03'),\n",
+              " Synset('fruit.n.03'),\n",
+              " Synset('fruit.v.01'),\n",
+              " Synset('fruit.v.02')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "_d6AlF7e186Q"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
